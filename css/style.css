@@ -132,14 +132,21 @@ body {
 }
 
 .contacts .link {
+  display: flex;
+  align-items: center;
   font-weight: 500;
   letter-spacing: 0.02em;
 
   color: var(--primary-text-color);
 }
 
-.contacts .link:hover,
-.contacts .link:focus {
+.contacts .icon {
+  margin-right: 10px;
+  fill: currentColor;
+}
+
+.contacts-link:hover,
+.contacts-link:focus {
   color: var(--accent-color);
 }
 
@@ -148,9 +155,26 @@ body {
 /* Hero */
 
 .hero {
+  display: flex;
+  align-items: center;
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
   text-align: center;
 
   background-color: var(--dark-bg-color);
+
+  background-image: linear-gradient(
+    to right,
+  rgba(47, 48, 58, 0.4),
+  rgba(47, 48, 58, 0.4)
+  ),
+  url(../image/header\ img.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-title {
@@ -160,7 +184,6 @@ body {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 
@@ -233,6 +256,16 @@ body {
   margin-bottom: 0;
 }
 
+.feature-list .icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  background-color: var(--light-bg-color);
+}
+
 .feature-list .title {
   margin-top: 0;
   margin-bottom: 10px;
@@ -292,6 +325,8 @@ body {
   padding-bottom: 30px;
   margin-right: 30px;
   margin-bottom: 30px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 
@@ -325,11 +360,83 @@ body {
 
 .team-list .position {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 16px;
 
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
+}
+
+.social-list {
+  display: flex;
+  justify-content: center;
+}
+
+.social-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-list .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  color: var(--icon-fill-color);
+}
+
+.social-link .icon {
+  fill: currentColor;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
+  color: var(--primary-white-color);
+}
+
+/* Client's */
+
+.clients-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.clients-list .item {
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.clients-list .item:nth-child(6n) {
+  margin-right: 0;
+}
+
+.clients-list .item:nth-last-child(-n + 6) {
+  margin-bottom: 0;
+}
+
+.clients-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 90px;
+  border: 1px solid var(--icon-fill-color);
+  border-radius: 4px;
+
+  color: var(--icon-fill-color);
+}
+
+.clients-link .icon {
+  fill: currentColor;
+}
+
+.clients-link:hover,
+.clients-link:focus {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 /* Footer */
@@ -340,6 +447,17 @@ body {
 
   background-color: var(--dark-bg-color);
 }
+
+.footer .container {
+  display: flex;
+  align-items: baseline;
+}
+
+.logo-address {
+  margin-right: 70px;
+}
+
+
 
 .footer .logo {
   display: block;
@@ -377,6 +495,22 @@ body {
   color: var(--accent-color);
 }
 
+.social .text {
+  display: block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+
+  color: var(--primary-white-color);
+}
+
+.footer-social {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-social .icon {
+  fill: var(--primary-bg-color);
+}
+
 /* Portfolio styles */
 
 .filter-list {
@@ -409,6 +543,9 @@ body {
 
 .filter-btn:hover,
 .filter-btn:focus {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+
   color: var(--primary-white-color);
   background-color: var(--accent-color);
 }
@@ -432,6 +569,16 @@ body {
   margin-right: 0;
 }
 
+.gallery-list .item:hover,
+.gallery-list .item:focus-within {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.gallery-list .link {
+  color: var(--primary-text-color);
+}
+
 .card-content {
   padding: 20px 24px;
   border-left: 1px solid #eeeeee;
@@ -439,8 +586,8 @@ body {
   border-bottom: 1px solid #eeeeee;
 }
 
-.gallery-list .link {
-  color: var(--primary-text-color);
+.gallery-list .image {
+  display: block;
 }
 
 .gallery-list .title {
@@ -453,10 +600,6 @@ body {
   letter-spacing: 0.06em;
 
   color: var(--title-text-color);
-}
-
-.gallery-list .image {
-  display: block;
 }
 
 .gallery-list .category {
